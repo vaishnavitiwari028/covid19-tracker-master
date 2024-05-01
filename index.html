@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
+    <title>Covid Tracker</title>
+  </head>
+  <body>
+    <main>
+      <div class="bg_image">
+        <div class="global_container">
+          <header class="header_container flex">
+            <h3>Global Reports</h3>
+            <ul class="global_stats_container flex">
+              <li class="global_infected">
+                <i class="fas fa-virus"></i>
+                <span></span>
+              </li>
+              <li class="global_recovered">
+                <i class="fas fa-smile"></i>
+                <span></span>
+              </li>
+              <li class="global_deaths">
+                <i class="fas fa-frown"></i>
+                <span></span>
+              </li>
+            </ul>
+          </header>
+          <section class="stats_container flex">
+            <div class="customizations_container">
+              <h1 class="country_name"></h1>
+              <div class="country_change_container">
+                <label class="country_input_label" for="country_input"
+                  >Set Country</label
+                >
+                <div class="country_selection">
+                  <input
+                    type="text"
+                    name="country_input"
+                    placeholder="Start Typing"
+                    id="country_input"
+                    class="country_selection_input"
+                  />
+                  <span class="your_location_wrapper">Your Location</span>
+                  <div class="hide_btn countries_hide_btn">
+                    <i class="fas fa-times"></i>
+                  </div>
+                  <ul class="all_countries_container"></ul>
+                </div>
+              </div>
+              <div class="date_change_container">
+                <div class="dates_change_label">Set Dates</div>
+                <div class="date_selection">
+                  <div class="date_selection_container">
+                    <div class="hide_btn dates_hide_btn">
+                      <i class="fas fa-times"></i>
+                    </div>
+                    <div class="from_date_container flex">
+                      <div class="date_select_headers">
+                        From
+                      </div>
+                      <label for="from_year">Year</label>
+                      <select name="from_year" id="from_year">
+                        <option selected value="2020">2020</option>
+                        <option value="2021">2021</option>
+                      </select>
+                      <label for="from_month">Month</label>
+                      <select name="from_month" id="from_month">
+                        <option selected value="1">January</option>
+                        <option value="2">February</option>
+                        <option value="3">March</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                      </select>
+
+                      <label for="from_date">
+                        Date
+                      </label>
+                      <select name="from_date" id="from_date">
+                        <option value="1" class="date">1</option>
+                        <option value="2" class="date">2</option>
+                        <option value="3" class="date">3</option>
+                        <option value="4" class="date">4</option>
+                        <option value="5" class="date">5</option>
+                        <option value="6" class="date">6</option>
+                        <option value="7" class="date">7</option>
+                        <option value="8" class="date">8</option>
+                        <option value="9" class="date">9</option>
+                        <option value="10" class="date">10</option>
+                        <option value="11" class="date">11</option>
+                        <option value="12" class="date">12</option>
+                        <option value="13" class="date">13</option>
+                        <option value="14" class="date">14</option>
+                        <option value="15" class="date">15</option>
+                        <option value="16" class="date">16</option>
+                        <option value="17" class="date">17</option>
+                        <option value="18" class="date">18</option>
+                        <option value="19" class="date">19</option>
+                        <option value="20" class="date">20</option>
+                        <option value="21" class="date">21</option>
+                        <option selected value="22" class="date">22</option>
+                        <option value="23" class="date">23</option>
+                        <option value="24" class="date">24</option>
+                        <option value="25" class="date">25</option>
+                        <option value="26" class="date">26</option>
+                        <option value="27" class="date">27</option>
+                        <option value="28" class="date">28</option>
+                        <option value="29" class="date">29</option>
+                        <option value="30" class="date">30</option>
+                        <option value="31" class="date">31</option>
+                      </select>
+                    </div>
+                    <div class="to_date_container flex">
+                      <div class="date_select_headers">
+                        To
+                      </div>
+                      <label class="to_year">Year</label>
+                      <select name="to_year" id="to_year">
+                        <option value="2020">2020</option>
+                        <option selected value="2021">2021</option>
+                      </select>
+                      <label for="to_month">Month</label>
+                      <select name="to_month" id="to_month">
+                        <option value="1">January</option>
+                        <option value="2">February</option>
+                        <option value="3">March</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                      </select>
+
+                      <label for="to_date">
+                        Date
+                      </label>
+                      <select name="to_date" id="to_date">
+                        <option value="1" class="date">1</option>
+                        <option value="2" class="date">2</option>
+                        <option value="3" class="date">3</option>
+                        <option value="4" class="date">4</option>
+                        <option value="5" class="date">5</option>
+                        <option value="6" class="date">6</option>
+                        <option value="7" class="date">7</option>
+                        <option value="8" class="date">8</option>
+                        <option value="9" class="date">9</option>
+                        <option value="10" class="date">10</option>
+                        <option value="11" class="date">11</option>
+                        <option value="12" class="date">12</option>
+                        <option value="13" class="date">13</option>
+                        <option value="14" class="date">14</option>
+                        <option value="15" class="date">15</option>
+                        <option value="16" class="date">16</option>
+                        <option value="17" class="date">17</option>
+                        <option value="18" class="date">18</option>
+                        <option value="19" class="date">19</option>
+                        <option value="20" class="date">20</option>
+                        <option value="21" class="date">21</option>
+                        <option value="22" class="date">22</option>
+                        <option value="23" class="date">23</option>
+                        <option value="24" class="date">24</option>
+                        <option value="25" class="date">25</option>
+                        <option value="26" class="date">26</option>
+                        <option value="27" class="date">27</option>
+                        <option value="28" class="date">28</option>
+                        <option value="29" class="date">29</option>
+                        <option value="30" class="date">30</option>
+                        <option value="31" class="date">31</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <button class="dates-submit_btn">Done</button>
+                  <div class="dates-error"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="stats_text_container flex">
+              <div class="stat_container total_cases">
+                <h5></h5>
+                <h3><i class="fas fa-virus"></i>Infected</h3>
+              </div>
+              <div class="stat_container recovered_cases">
+                <h5></h5>
+                <h3><i class="fas fa-smile"></i>Recovered</h3>
+              </div>
+              <div class="stat_container death_cases">
+                <h5></h5>
+                <h3><i class="fas fa-frown"></i>Deaths</h3>
+              </div>
+            </div>
+          </section>
+          <section class="line_chart_container">
+            <canvas id="line-chart" width="800" height="450"></canvas>
+          </section>
+        </div>
+      </div>
+      <section class="pie_stats_container flex">
+        <div class="pie_stats_text_container">
+          <h1>Statistics During Above Time Range</h1>
+          <h1 class="pie_stats_for_country capital"></h1>
+          <table class="rate_data_table">
+            <tr>
+              <td>Reocovery Rate</td>
+              <td class="recovery_rate_data"></td>
+            </tr>
+            <tr>
+              <td>Mortality Rate</td>
+              <td class="mortality_rate_data"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="pie_chart_container">
+          <canvas id="pie-chart"></canvas>
+        </div>
+      </section>
+
+      <section class="data_table">
+        <div class="global_container">
+          <h3>Top Countries Affected</h3>
+          <table class="data_table_container">
+            <thead>
+              <tr>
+                <th>Country</th>
+                <th>Infected</th>
+                <th>Recovered</th>
+                <th>Death</th>
+              </tr>
+            </thead>
+            <tbody class="data_table_body"></tbody>
+          </table>
+        </div>
+      </section>
+      <section>
+        <div class="resource_videos_container flex global_container">
+          <div class="video_container">
+            <h2 class="video_header">
+              What is covid-19
+            </h2>
+            <iframe
+              width="100%"
+              height="315"
+              src="https://www.youtube.com/embed/OZcRD9fV7jo"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+
+          <div class="video_container">
+            <h2 class="video_header">
+              How to protect yourself
+            </h2>
+            <iframe
+              width="100%"
+              height="315"
+              src="https://www.youtube.com/embed/1APwq1df6Mw"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer_container flex">
+      <div>
+        Designed And Built By Vaishnavi Tiwari
+      </div>
+    </footer>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.1/chart.min.js"
+      integrity="sha512-BqNYFBAzGfZDnIWSAEGZSD/QFKeVxms2dIBPfw11gZubWwKUjEgmFUtUls8vZ6xTRZN/jaXGHD/ZaxD9+fDo0A=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/index.js" type="module"></script>
+  </body>
+</html>
